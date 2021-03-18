@@ -1,9 +1,9 @@
 <div class="todos">
     <div class="todos-header">
-      <h3 class="todos-title">Todo List</h3>
+      <h3 class="todos-title">To Do List</h3>
       <div>
         <p>
-            You have <span class="todos-count"></span> items
+            You have {{todoCount}} items
         </p>
         <button 
           type="button" 
@@ -23,5 +23,10 @@
       >
       <button type="submit">Submit</button>
     </form>
-    <ul class="todos-list"></ul>
+    <ul>
+        <li *ngFor="let item of todosLocalCache; index as index" data-id="${item.id}">
+            <span>{{index}}. {{item.label}}</span>
+            <button type="button"></button>
+        </li>
+    </ul>
   </div>
