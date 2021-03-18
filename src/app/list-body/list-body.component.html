@@ -2,7 +2,9 @@
     <div class="todos-header">
       <h3 class="todos-title">Todo List</h3>
       <div>
-        <p>You have <span class="todos-count"></span> items</p>
+        <p>
+            You have <span class="todos-count"></span> items
+        </p>
         <button 
           type="button" 
           class="todos-clear" 
@@ -12,12 +14,14 @@
         </button>
       </div>
     </div>
-    <form class="todos-form" name="todos">
+    <form (ngSubmit)="addTodo($event)" class="todos-form" name="todos">
       <input 
         type="text" 
+        [(ngModel)]="msg"
         placeholder="What's next?" 
-        name="todo"
+        name="msg"
       >
+      <button type="submit">Submit</button>
     </form>
     <ul class="todos-list"></ul>
   </div>
